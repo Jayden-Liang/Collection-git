@@ -1,0 +1,22 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block head %}
+<style>
+    .content{
+        margin: auto;
+        margin-top: 160px;
+        text-align: center;
+        color : #696969;
+    }
+    .marked {
+       color: blue;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+   <div class="content">
+   <h1>Welcome, {{ user }},</h1> <br>
+   <h4>You've <strong class="marked">successfully</strong> registered, an email has been sent to your email box{{ email }} . Please click the link contained to activate. Thank you!</h4>
+       </div>
+{% endblock %}

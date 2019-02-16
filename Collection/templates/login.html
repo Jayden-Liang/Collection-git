@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <style>
+            /**
+            * brand colors - https://www.sendwithus.com/press
+            *   light grey      #f5f5f5
+            *   dark grey       #777777
+            *   light blue      #ebf0f8
+            *   blue            #9cb6de
+            *   dark blue       #456289
+            *   light green     #8fe5d5
+            *   green           #ebf0f8
+            *   dark green      #2FB0A0
+            *   light orange    #fbefda
+            *   orange          #F7931D
+            *   dark orange     ???
+            */
+
+            /* utils */
+            .text-left {
+                text-align: left;
+            }
+
+            .text-right {
+                text-align: right;
+            }
+
+            .text-center {
+                text-align: center;
+            }
+
+            .pull-left {
+                float: left;
+            }
+
+            .pull-right {
+                float: right;
+            }
+
+            .clearfix:before,
+            .clearfix:after {
+              display: table;
+              content: " ";
+            }
+
+            .clearfix:after {
+              clear: both;
+            }
+
+            .display-hidden {
+                display: none;
+            }
+
+            /* buttons */
+            .btn {
+                display: inline-block;
+                padding: 10px 24px;
+                border-radius: 2px;
+                border: 1px solid #777777;
+                background-color: #fff;
+                font-weight: 300;
+                font-size: 13px;
+                text-decoration: none;
+                text-align: center;
+                transition: border 300ms ease-in-out;
+            }
+
+            .btn:hover {
+                cursor: pointer;
+            }
+
+            .btn:focus {
+                outline: none;
+            }
+
+            .btn:hover,
+            .btn:active {
+                background-color: #f8f8f8;
+            }
+
+            .btn-block {
+                width: 100%;
+            }
+
+            .btn-blue {
+                border: 1px solid #9cb6de;
+                background-color: #FFF;
+                color: #456289;
+            }
+
+            .btn-blue:hover,
+            .btn-blue:focus,
+            .btn-blue:active {
+                border: 1px solid #456289;
+                background-color: #FFF;
+                color: #456289;
+            }
+
+            .btn-green {
+                border: 1px solid #8fe5d5;
+                background-color: #FFF;
+                color: #2FB0A0;
+            }
+
+            .btn-green:hover,
+            .btn-green:focus,
+            .btn-green:active {
+                border: 1px solid #2FB0A0;
+                background-color: #FFF;
+                color: #2FB0A0;
+            }
+
+            .btn-red {
+                border: 1px solid #ffafa5;
+                background-color: #fff;
+                color: #d84a38;
+            }
+
+            .btn-red:hover,
+            .btn-red:focus,
+            .btn-red:active {
+                border: 1px solid #d84a38;
+                background-color: #fff4f4;
+                color: #d84a38;
+            }
+
+            .btn-blue:active,
+            .btn-green:active,
+            .btn-red:active {
+                background-color: #f8f8f8;
+            }
+
+            /* faux-progress */
+            .progress,
+            .progress .bar {
+                position: relative;
+            }
+
+            .progress {
+                width: 100%;
+                background: #ACE;
+                border-radius: 15px;
+                z-index: 1009;
+            }
+
+            .progress .bar {
+                background: #006FCC;
+                width: 100%;
+                height: 100%;
+                z-index: 1010;
+                border-radius: 15px;
+            }
+
+            .progress .bar.bar-half {
+                width: 50%;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            /* general */
+            html {
+                box-sizing: border-box;
+            }
+
+            *,
+            *:before,
+            *:after {
+                box-sizing: inherit;
+            }
+
+            body {
+                padding: 0;
+                margin: 0;
+                font-family:
+                    -apple-system, BlinkMacSystemFont,
+                    "Segoe UI", "Roboto", "Oxygen",
+                    "Ubuntu", "Cantarell", "Fira Sans",
+                    "Droid Sans", "Helvetica Neue", sans-serif;
+                font-size: 13px;
+                font-weight: 200;
+                line-height: 1.6;
+                color: #777;
+                background: #f0f0f0;
+
+                height: 100vh;
+                width: 100vw;
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+            a {
+                color: #777;
+                transition: color 300ms ease-in-out;
+            }
+
+            a:hover,
+            a:active {
+                color: #555;
+            }
+
+            p {
+                margin: 0;
+                padding: 0 0 15px;
+            }
+
+            strong {
+                font-weight: 600;
+                color: #777;
+            }
+
+            h4 {
+                margin: 0;
+                padding: 0 0 10px;
+                color: #777;
+            }
+
+            .splash-wrapper {
+                /*
+                height: 100vh;
+                width: 100vw;
+                display: table-cell;
+                vertical-align: middle;
+                */
+                width: 100%;
+                padding: 20px;
+            }
+
+            .splash-container {
+                max-width: 500px;
+                margin: 60px auto;
+                border: 1px solid #e2e2e2;
+                border-radius: 3px;
+                background: #fff;
+                padding: 20px;
+            }
+
+            .splash-logo {
+                margin: 80px 0 50px;
+            }
+
+            .splash-logo a {
+                display: block;
+                margin: 0 auto;
+                width: 160px;
+            }
+
+            .splash-content {
+                width: 100%;
+            }
+
+            /* forms */
+            .checkbox {
+                position: relative;
+            }
+
+            .checkbox input[type=checkbox] {
+                position: relative;
+                top: 3px;
+            }
+
+            .form {
+                max-width: 320px;
+                margin: 0 auto;
+            }
+
+            .form-heading,
+            .form-footing {
+                text-align: center;
+            }
+
+            .form-heading {
+                padding: 0 0 30px;
+            }
+
+            .form-footing {
+                padding: 10px 0 80px;
+            }
+
+            .form-progress {
+                margin: 40px 0 0;
+            }
+
+            .form-row {
+                position: relative;
+                margin-bottom: 20px;
+            }
+
+            .form-row input[type=text],
+            .form-row input[type=password],
+            .form-row input[type=email],
+            .form-row input[type=tel],
+            .form-row input[type=number],
+            .form-row select {
+                width: 100%;
+                padding: 10px 14px;
+                border: 1px solid #e0e0e0;
+                background: #fff;
+                border-radius: 3px;
+                color: #777;
+                font-size: 13px;
+                outline: none;
+                transition: border 300ms ease-in-out;
+            }
+
+            .form-row input[type=text]:hover,
+            .form-row input[type=text]:focus,
+            .form-row input[type=password]:hover,
+            .form-row input[type=password]:focus,
+            .form-row input[type=email]:hover,
+            .form-row input[type=email]:focus,
+            .form-row input[type=tel]:hover,
+            .form-row input[type=tel]:focus,
+            .form-row select:hover,
+            .form-row select:focus {
+                border: solid 1px #777;
+            }
+
+            .form-row input[type=text][disabled=disabled],
+            .form-row input[type=password][disabled=disabled],
+            .form-row input[type=email][disabled=disabled],
+            .form-row input[type=tel][disabled=disabled],
+            .form-row select[disabled=disabled] {
+                background: #f7f7f7;
+                cursor: not-allowed;
+            }
+
+            .form-row select {
+                height: 36px;
+            }
+
+            .form-row input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                color: #bbb;
+                font-size: 13px;
+            }
+
+            .form-row input::-moz-placeholder { /* Firefox 19-50 */
+                color: #bbb;
+                font-size: 13px;
+                opacity: 1; /* This is Firefox specific apparently? https://stackoverflow.com/a/19621642/582369 */
+            }
+
+            .form-row input:-ms-input-placeholder { /* IE 10+ */
+                color: #bbb;
+                font-size: 13px;
+            }
+
+            .form-row input::placeholder {
+                color: #bbb;
+                font-size: 13px;
+                opacity: 1;
+            }
+
+            .form-input-append {
+                position: relative;
+            }
+
+            .form-input-append input {
+                position: relative;
+                padding-right: 85px !important;
+            }
+
+            .form-input-addon {
+                position: absolute;
+                top: 4px;
+                right: 0;
+                height: 30px;
+                padding: 4px 15px 8px;
+                border-left: 1px solid #e0e0e0;
+                color: #e0e0e0;
+            }
+
+            /* form alerts */
+            .form-alert {
+                text-align: center;
+                padding: 20px;
+                margin: 0 0 20px;
+                border-radius: 3px;
+            }
+
+            .form-alert-success {
+                background: #F9FFFA;
+                color: #32AB45;
+            }
+
+            .form-alert-error {
+                background: #ffeeec;
+                color: #d84a38;
+            }
+
+            /* form well */
+            .form-well {
+                margin: 0 0 20px;
+                padding: 20px;
+                border-radius: 3px;
+                background: #F7F7F7;
+            }
+
+            /* basic responsiveness */
+            @media screen and (max-width: 767px) {
+                .splash-container {
+                    margin: 20px auto;
+                }
+
+                .splash-logo {
+                    margin: 40px 0px;
+                }
+
+                .form-footing {
+                    padding: 10px 0 40px;
+                }
+
+                .form-row input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                    color: #bbb;
+                    font-size: 13px;
+                }
+
+                .form-row input::-moz-placeholder { /* Firefox 19-50 */
+                    color: #bbb;
+                    font-size: 13px;
+                    opacity: 1; /* This is Firefox specific apparently? https://stackoverflow.com/a/19621642/582369 */
+                }
+
+                .form-row input:-ms-input-placeholder { /* IE 10+ */
+                    color: #bbb;
+                    font-size: 13px;
+                }
+
+                .form-row input::placeholder {
+                    color: #bbb;
+                    font-size: 13px;
+                    opacity: 1;
+                }
+
+                body,
+                .form-row input[type=text],
+                .form-row input[type=password],
+                .form-row input[type=email],
+                .form-row input[type=tel],
+                .form-row input[type=number],
+                .form-row select {
+                    font-size: 16px;
+                }
+
+                .form-row input[type=text],
+                .form-row input[type=password],
+                .form-row input[type=email],
+                .form-row input[type=tel],
+                .form-row input[type=number] {
+                    -webkit-appearance: none;
+                }
+
+                .form-row input[type=text],
+                .form-row input[type=password],
+                .form-row input[type=email],
+                .form-row input[type=tel],
+                .form-row input[type=number],
+                .form-row select {
+                    padding: 14px 18px;
+                }
+
+                .form-input-append input {
+                    padding-right: 90px !important;
+                }
+
+                .form-input-addon {
+                    top: 8px;
+                    height: 40px;
+                    padding: 4px 15px 8px;
+                }
+            }
+        </style>
+    </head>
+    <body class="">
+        <div class="splash-wrapper">
+            <div class="splash-container">
+                <div class="splash-logo">
+                    <a href="/">
+                        <img src="{{ url_for('static',filename='pic/ps_fish.jpg') }}"  height='200' width="200" >
+                        <!--<img src="ps_fish.jpg" alt=""  height='200' width="200" id="swu-logo" >-->
+                    </a>
+                </div>
+
+                <div class="splash-content">
+
+<form id="form_login" class="form" action="/login" method="POST">
+    <div style='display:none'><input type="hidden" name="csrf_token" value="{{ csrf_token() }}" /></div>
+
+    <div class="form-row">
+        <div class="error-notice"></div>
+        <input type="email"
+            name="email"
+            class="form-item-input"
+            placeholder="Email"
+            autofocus="autofocus"
+            maxlength="128"
+        />
+    </div>
+
+    <div class="form-row">
+        <div class="form-input-append">
+            <input type="password"
+                name="password"
+                placeholder="Password"
+            />
+            <span class="form-input-addon">
+                <a href="/forgot_password">忘了?</a>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <button type="submit" class="btn btn-block btn-green">
+            登录
+        </button>
+        <input type="hidden"
+            id="input_login_redirect"
+            name="next"
+            value="/"
+        />
+    </div>
+     <div>{{ message }}</div>
+    <div class="form-footing">
+        <p>还没账号？<a href="/register">立即注册!</a></p>
+    </div>
+</form>
+
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+
+        </script>
+    </body>
+</html>
