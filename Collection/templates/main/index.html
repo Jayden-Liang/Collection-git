@@ -88,7 +88,7 @@
     .badge{
        float: right;
        width: 20px;
-       padding-right: 50px;
+       padding-right: 100px;
        margin-top: 10px;
        padding-top: 5px;
        color: #2780e3;
@@ -101,6 +101,9 @@
       <!--border:2px solid ;-->
       border-radius：30px;
     }
+    .flask-moment{
+        display: inline !important;
+    }
 
 
 
@@ -110,6 +113,7 @@
 </style>
 
 
+{{ moment.include_jquery() }}
 {{ moment.include_moment() }}
 {{ moment.locale('zh-cn') }}　
 
@@ -143,7 +147,8 @@
 
       <div class="main_content">
        {% for x in articles %}
-           <p class="badge"><span >{{ moment(x.ct).fromNow() }}</span></p>
+           <p class="badge">{{ moment(x.ct).fromNow() }}</p>
+
           <table id="content_table">
             <tr valign="bottom">
             <td><a href="/detail/{{ x.id }}" class="content_title">{{ x.title | safe }}</a>

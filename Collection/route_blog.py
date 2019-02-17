@@ -28,7 +28,7 @@ def index():
     from models import User
     from initial import db
     username = current_user.username
-    articles = Blog.query.all()
+    articles = Blog.query.filter().order_by(Blog.id.desc()).all()
     from initial import moment
     utc_now = datetime.utcnow()
     print('/', utc_now)
