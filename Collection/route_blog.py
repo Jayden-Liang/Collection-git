@@ -28,13 +28,18 @@ def index():
     from models import User
     from initial import db
     username = current_user.username
-    articles = Blog.query.filter().order_by(Blog.id.desc()).all()
+    page = request.args.get('page',1 ,type=int)
+    print('index', page)
+    articles = Blog.query.filter().order_by(Blog.id.desc()).paginate(page, 10, False)
+    pages = articles.pages
     from initial import moment
     utc_now = datetime.utcnow()
     print('/', utc_now)
     return render_template('main/index.html', username=  username,
                                                  articles = articles,
-                                                 utc_now = utc_now
+                                                 utc_now = utc_now,
+                                                 pages = pages,
+
                                                                   )
 
 

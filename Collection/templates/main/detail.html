@@ -40,8 +40,12 @@ body {
        width：100px;
        margin-right: 100px;
     }
+    .flask-moment{
+        display: inline !important;
+    }
 </style>
 
+{{ moment.include_jquery() }}
 {{ moment.include_moment() }}
 {{ moment.locale('zh-cn') }}　
 
