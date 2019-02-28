@@ -147,7 +147,7 @@
 
       <div class="main_content">
        {% for x in articles.items %}
-           <p class="badge">{{ moment(x.ct).fromNow() }}</p>
+           <p class="badge">{{ moment(x.ut).fromNow() }}</p>
 
           <table id="content_table">
             <tr valign="bottom">
@@ -186,7 +186,7 @@
         {% endfor %}
         {% if articles.has_next %}
             <li class="page-item">
-            <a class="page-link" href="?page={{ articles.next(error_out=False).page }}">&laquo;</a>
+            <a class="page-link" href="?page={{ articles.next(error_out=False).page }}">&raquo;</a>
             </li>
         {% else %}
             <li class="page-item disabled">

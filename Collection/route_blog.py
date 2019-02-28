@@ -30,7 +30,7 @@ def index():
     username = current_user.username
     page = request.args.get('page',1 ,type=int)
     print('index', page)
-    articles = Blog.query.filter().order_by(Blog.id.desc()).paginate(page, 10, False)
+    articles = Blog.query.filter().order_by(Blog.ut.desc()).paginate(page, 8, False)
     pages = articles.pages
     from initial import moment
     utc_now = datetime.utcnow()
@@ -59,6 +59,7 @@ def new_article():
         article = Blog(title= title,
                                 body=body,
                                 ct=current_time,
+                                ut = ct,
                                 topic= topic,
                                 writer = username
                     )
@@ -78,12 +79,14 @@ def detail(id):
 @main.route('/article/update', methods=['POST', 'GET'])
 def update():
     from models import Blog
+    current_time = datetime.utcnow()
     arg = request.args.get('id')
     article = Blog.query.filter_by(id=int(arg)).first()
     if request.method == 'POST':
         article.title = request.form.get('title')
         article.body = request.form.get('body')
         article.topic = request.form.get('topic')
+        article.ut = current_time
         from initial import db
         db.session.commit()
         return redirect('/')
