@@ -88,10 +88,14 @@
          <div class="form-group">
          <label for="exampleSelect1">版块</label>
          <select class="form-control" id="exampleSelect1" style="width: 600px">
-            <option value="Flask">Flask</option>
-            <option value="Python">Python</option>
-            <option value="Javascript">Javascript</option>
-            <option value="其他">其他</option>
+            <option value="Flask" id="Flask">Flask</option>
+            <option value="Python" id="Python">Python</option>
+            <option value="Javascript" id="Javascript">Javascript</option>
+             <option value="数据库" id="数据库">数据库 </option>
+             <option value="数据结构与算法" id="数据结构与算法">数据结构与算法</option>
+             <option value="前端" id="前端">前端</option>
+             <option value="读书笔记和杂想" id="读书笔记和杂想">读书笔记和杂想</option>
+            <option value="其他" id="其他">其他</option>
          </select>
     </div>
          <form method="POST"  id="dup_form" onsubmit="return get_textarea()">
@@ -103,6 +107,16 @@
              </form>
 
 </div>
+
+<script>
+    topic = {{  article.topic }}
+    console.log(topic)
+    console.log(topic.value)
+    <!--find_with_id = document.querySelector('#topic')-->
+    topic.setAttribute("selected","selected");
+</script>
+
+
         <script src="{{ url_for('static',filename='editor.md-master/examples/js/jquery.min.js') }}"></script>
         <script src="{{ url_for('static',filename='editor.md-master/editormd.min.js') }}"></script>
         <script type="text/javascript">

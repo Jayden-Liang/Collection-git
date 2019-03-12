@@ -12,6 +12,9 @@ import time
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask_login import login_required, login_user
 from datetime import datetime
+import sys, os
+sys.path.append('..')
+from models import Blog, User, db
 
 main = Blueprint('user', __name__)
 
@@ -43,9 +46,6 @@ class RegisterForm(FlaskForm):
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
-        from models import User
-        from initial import db
-        from initial import app
         # db.drop_all()
         # db.create_all()
         current_time = datetime.utcnow()
@@ -70,8 +70,6 @@ def register():
 @main.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        from models import User
-        from initial import db
         email = request.form.get('email')
         login_pwd = User.salted_password(request.form.get('password'))
         a= User.query.filter_by(email=email).first()

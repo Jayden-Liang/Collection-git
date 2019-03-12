@@ -1,5 +1,4 @@
-from initial import app, moment
-from models import User, Blog
+from initial import app
 
 # from itsdangerous import URLSafeSerializer as Serializer
 # s = Serializer(app.config['SECRET_KEY'])

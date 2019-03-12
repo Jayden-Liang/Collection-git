@@ -1,7 +1,10 @@
-
 from flask_login import UserMixin
 import hashlib
-from initial import db
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.schema import CreateTable
+
+db = SQLAlchemy()
+
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key = True)
@@ -21,7 +24,6 @@ class User(db.Model, UserMixin):
         return hash2
 
 
-
 class Blog(db.Model):
     id= db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String())
@@ -32,4 +34,12 @@ class Blog(db.Model):
     ut = db.Column(db.DateTime())
 
 
-db.create_all()
+class Todo(db.Model):
+    id= db.Column(db.Integer, primary_key = True)
+    body = db.Column(db.String())
+    done = db.Column(db.Integer)
+    ct =db.Column(db.DateTime())
+    finished_time = db.Column(db.DateTime())
+
+    def __repr__(self):
+        return '<Todo {}>'.format(self.body)

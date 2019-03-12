@@ -1,0 +1,37 @@
+.whole{
+    background-image: url('/static/pic/mycover.jpg');
+    /*background-image: url_for('static', filename='image/mycover.jpg'; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
+
+/*.myform{
+     width: 60%;
+     margin: 30px 0;
+} */
+.mybar{
+   margin-top: 5rem;
+}
+#main{
+    width: 50%;
+}
+
+#my-badge{
+  float: right!important;
+  width: 1rem;
+  color: yellow;
+}
+
+.all-list{
+   margin-top: 2rem;
+
+}
+
+.cross-icon{
+  color:#FF7173;
+  position: absolute;
+  width: 20px;
+  right: 20px;
+}

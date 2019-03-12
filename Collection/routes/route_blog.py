@@ -14,6 +14,9 @@ from flask_login import login_required, login_user, current_user
 from datetime import datetime
 import hashlib
 import json
+import sys, os
+sys.path.append('..')
+from models import Blog, User, db
 
 main= Blueprint('blog', __name__)
 
@@ -24,17 +27,12 @@ main= Blueprint('blog', __name__)
 @main.route('/')
 @login_required
 def index():
-    from models import Blog
-    from models import User
-    from initial import db
     username = current_user.username
     page = request.args.get('page',1 ,type=int)
-    print('index', page)
     articles = Blog.query.filter().order_by(Blog.ut.desc()).paginate(page, 8, False)
     pages = articles.pages
     from initial import moment
     utc_now = datetime.utcnow()
-    print('/', utc_now)
     return render_template('main/index.html', username=  username,
                                                  articles = articles,
                                                  utc_now = utc_now,
@@ -47,11 +45,7 @@ def index():
 @login_required
 def new_article():
     if request.method == 'POST':
-        from models import Blog
-        from models import User
-        from initial import db
         current_time = datetime.utcnow()
-        print(request.form)
         username = current_user.username
         title = request.form.get('title')
         body = request.form.get('body')
@@ -59,26 +53,22 @@ def new_article():
         article = Blog(title= title,
                                 body=body,
                                 ct=current_time,
-                                ut = ct,
+                                ut = current_time,
                                 topic= topic,
                                 writer = username
                     )
         db.session.add(article)
         db.session.commit()
-        print('创建文章成功')
         return redirect('/')
     return render_template('main/new-post.html')
 
 @main.route('/detail/<id>')
 def detail(id):
-    from models import Blog
     article = Blog.query.filter_by(id=id).first()
-    print(article)
     return render_template('main/detail.html', article= article)
 
 @main.route('/article/update', methods=['POST', 'GET'])
 def update():
-    from models import Blog
     current_time = datetime.utcnow()
     arg = request.args.get('id')
     article = Blog.query.filter_by(id=int(arg)).first()
@@ -94,8 +84,6 @@ def update():
 
 @main.route('/article/delete')
 def delete():
-    from initial import db
-    from models import Blog
     arg = request.args.get('id')
     article = Blog.query.filter_by(id=int(arg)).first()
     db.session.delete(article)
@@ -104,15 +92,11 @@ def delete():
 
 @main.route('/topic/<topic>')
 def get_topicAll(topic):
-    from initial import db
-    from models import Blog
     blog = Blog.query.filter_by(topic=topic).all()
     all_blog = {}
     for x in blog:
        all_blog[x.id] = x.title
-    print(all_blog)
     all = json.dumps(all_blog, ensure_ascii=False)
-    print(type(all))
     return all
 
 

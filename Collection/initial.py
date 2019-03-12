@@ -8,12 +8,13 @@ from wtforms.validators import DataRequired
 from flask_bootstrap import Bootstrap
 from flask import  Flask, redirect, url_for, flash, render_template, Blueprint
 from flask_wtf.csrf import CSRFProtect
-from route_user import main as route_user
-from route_blog import main as route_blog
+from routes.route_user import main as route_user
+from routes.route_blog import main as route_blog
+from routes.route_todo import todo_main
 from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_moment import Moment
-
+from models import db, User
 
 
 
@@ -22,7 +23,8 @@ app = Flask(__name__)
 
 bootstrap = Bootstrap(app)
 csrf = CSRFProtect(app)
-db= SQLAlchemy(app)
+db.init_app(app)
+db.app= app
 migrate = Migrate(app, db)
 moment= Moment(app)
 login_manager= LoginManager(app)
@@ -39,15 +41,13 @@ app.secret_key= b'fdhakhfkjaghj873o8qyhhg'
 
 app.register_blueprint(route_blog)
 app.register_blueprint(route_user)
-
+app.register_blueprint(todo_main)
 
 
 
 
 @login_manager.user_loader
 def load_user(id):
-    from models import User
-    print('i just checked, load_user')
     return User.query.get(int(id))
 
 
