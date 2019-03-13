@@ -31,6 +31,7 @@
 
 
 <div id="main" class="container mybar">
+    <input type="hidden" id='csrf_token' name="csrf_token" value="{{ csrf_token() }}"/>
     <input type="text" class="form-control"  name='body' value='' id="myform">
     <div class="all-list shadow">
     <ul class="list-group" id="list-group">

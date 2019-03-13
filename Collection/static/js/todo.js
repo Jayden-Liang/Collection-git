@@ -1,6 +1,8 @@
 var ajax = function(method, path, data, responseCallback) {
     var r = new XMLHttpRequest()           // 设置请求方法和请求地址
     r.open(method, path, true)
+    csrf_token = document.querySelector('#csrf_token')
+    r.setRequestHeader("X-CSRFToken", csrf_token.value) 
     r.setRequestHeader('Content-Type', 'application/json') 
     r.onreadystatechange = function() {     // 注册响应函数
         if(r.readyState === 4) {
