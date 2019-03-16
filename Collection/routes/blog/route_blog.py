@@ -15,10 +15,10 @@ from datetime import datetime
 import hashlib
 import json
 import sys, os
-sys.path.append('..')
+sys.path.append(os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))))
 from models import Blog, User, db
 
-main= Blueprint('blog', __name__)
+main= Blueprint('blog', __name__, template_folder='templates')
 
 
 
@@ -31,9 +31,8 @@ def index():
     page = request.args.get('page',1 ,type=int)
     articles = Blog.query.filter().order_by(Blog.ut.desc()).paginate(page, 8, False)
     pages = articles.pages
-    from initial import moment
     utc_now = datetime.utcnow()
-    return render_template('main/index.html', username=  username,
+    return render_template('index.html', username=  username,
                                                  articles = articles,
                                                  utc_now = utc_now,
                                                  pages = pages,
@@ -60,12 +59,12 @@ def new_article():
         db.session.add(article)
         db.session.commit()
         return redirect('/')
-    return render_template('main/new-post.html')
+    return render_template('new-post.html')
 
 @main.route('/detail/<id>')
 def detail(id):
     article = Blog.query.filter_by(id=id).first()
-    return render_template('main/detail.html', article= article)
+    return render_template('detail.html', article= article)
 
 @main.route('/article/update', methods=['POST', 'GET'])
 def update():
@@ -80,7 +79,7 @@ def update():
         from initial import db
         db.session.commit()
         return redirect('/')
-    return render_template('main/update.html', article=article)
+    return render_template('update.html', article=article)
 
 @main.route('/article/delete')
 def delete():

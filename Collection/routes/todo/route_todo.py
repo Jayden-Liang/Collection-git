@@ -3,12 +3,12 @@ from flask_wtf import FlaskForm
 from wtforms import TextAreaField, SubmitField, StringField, PasswordField
 from wtforms.validators import DataRequired, Length
 import sys, os
-sys.path.append('..')
+sys.path.append(os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))))
 from models import db, Todo
 from datetime import datetime
 import time
 
-todo_main = Blueprint('todo_main', __name__)
+todo_main = Blueprint('todo_main', __name__, template_folder='templates' )
 
 class TodoForm(FlaskForm):
     body =StringField('', validators=[DataRequired(), Length(0, 60, message='too long')],
@@ -19,7 +19,7 @@ class TodoForm(FlaskForm):
 @todo_main.route('/todo', methods=['GET'])
 def index():
     todo = Todo.query.all()
-    return render_template('/main/todo_index.html', todos = todo)
+    return render_template('todo_index.html', todos = todo)
 
 @todo_main.route('/api/todo/add', methods=['POST'])
 def add():

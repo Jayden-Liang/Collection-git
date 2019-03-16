@@ -13,10 +13,10 @@ from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask_login import login_required, login_user
 from datetime import datetime
 import sys, os
-sys.path.append('..')
+sys.path.append(os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))))
 from models import Blog, User, db
 
-main = Blueprint('user', __name__)
+main = Blueprint('user', __name__, template_folder='templates')
 
 
 
