@@ -25,7 +25,7 @@ def index():
 def add():
     body= request.get_json()
     current_time = datetime.utcnow()
-    todo = Todo(body= body['body'],
+    todo = Todo(body= body['body'].strip(),
                 ct = current_time,
                 done = 0
                 )
@@ -37,9 +37,12 @@ def add():
 def mark():
     received = request.get_json()
     body = received['content'].strip()
+    print(body)
     todo = Todo.query.filter_by(body= body).first()
+    print(todo)
     if received['action'] == 'add_check':
         todo.done = 1
+        print('todo.done')
         db.session.commit()
     if received['action'] == 'remove_check':
         todo.done = 0

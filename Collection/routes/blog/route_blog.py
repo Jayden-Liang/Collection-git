@@ -76,7 +76,6 @@ def update():
         article.body = request.form.get('body')
         article.topic = request.form.get('topic')
         article.ut = current_time
-        from initial import db
         db.session.commit()
         return redirect('/')
     return render_template('update.html', article=article)
