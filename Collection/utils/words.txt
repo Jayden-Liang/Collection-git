@@ -1,0 +1,15 @@
+﻿with open语句有readline和readlines,前者是只读一行，后者是读取完保存在一个数组中
+Docker总共分为image(镜像), container, 和repository。 container从调取保存在image中的应用，image可以从docker hub上下载
+比较常用的jinja2过滤器，有escape(别名为e,转义HTML文本), length, last, random, safe, trim, wordcount, truncate(截断字符串，常用于文章摘要）
+response和request header 分别为HTTP/1.1 200 OK 和GET /?message=queryString HTTP/1.1
+hi
+ji
+lj
+gk
+ko
+nbn
+jlksjg
+jsgldj
+ewrjl
+ankjn
+hgkj

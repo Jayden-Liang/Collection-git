@@ -34,6 +34,12 @@ class Blog(db.Model):
     ut = db.Column(db.DateTime())
 
 
+class Topic(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    body = db.Column(db.String(128))
+
+
+
 class Todo(db.Model):
     id= db.Column(db.Integer, primary_key = True)
     body = db.Column(db.String())

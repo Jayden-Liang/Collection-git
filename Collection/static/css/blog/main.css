@@ -1,0 +1,105 @@
+
+@font-face {
+ font-family: 'NotoSansCJK-Regular-1';
+ src: url('./SiYuanHeiTiGoogleBan/NotoSansCJK-Regular-1.otf');
+}  
+/*其中fontName替换为你的字体名称*/
+
+
+@font-face {
+    font-family: 'NotoSansCJK-Thin-2';
+    src: url('/static/css/SiYuanHeiTiGoogleBan/NotoSansCJK-Thin-2.otf');
+} 
+
+
+/*#main-sec{
+   margin-left: 3rem;
+}*/
+ 
+
+.daily-blog{
+   font-family:NotoSansCJK-Thin-2;
+	width: 80%;
+	border:solid;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius:15px;
+    margin:4rem 0 0 9rem;
+/*    display: inline-block*/
+	background-image:url('/static/pic/bg_for_base.jpg');
+	background-size: cover;
+	color: white;
+	box-shadow: -7px 7px 11px -6px rgba(45,43,43,0.86);
+    -webkit-box-shadow: -7px 7px 11px -6px rgba(45,43,43,0.86);
+    -moz-box-shadow: -7px 7px 11px -6px rgba(45,43,43,0.86);
+
+
+}
+
+
+.blog-intro{
+	padding-left: 6rem;
+}
+.blog-title{
+	padding-left: 8rem;
+	padding-top: 2rem;
+
+}
+
+.blog-tag{
+	padding-left: 8rem;
+	padding-top: 3rem;
+}
+
+.mybutton{
+	margin-bottom: 1.5rem;
+	text-align: top;
+}
+
+
+.slides{
+	margin-top: 4rem;
+}
+
+.person-info{
+	width:18rem;
+	margin-top: 2rem;
+	margin-left: 5rem;
+	text-align: center;
+/*	display: table-cell;*/
+	vertical-align: middle;
+ /*   margin-right: 3rem;*/
+    background-color: white;
+    border-radius: 6px;
+
+		
+
+}
+
+.portrait{
+	padding: 2rem;
+
+}
+
+/*.name{
+	padding: 1rem;
+
+}*/
+
+.quote{
+    margin:2rem;
+    padding-bottom: 2rem;
+
+}
+
+.fa-icon{
+	color: #00ffff;
+}
+
+.tag{
+	color: white;
+}
+
+
+
+	

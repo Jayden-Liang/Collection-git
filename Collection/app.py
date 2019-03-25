@@ -62,9 +62,6 @@ if __name__=='__main__':
 
 
 
-
-
-
 # db.init_app(app)
 # db.app= app
 # migrate = Migrate(app, db)
