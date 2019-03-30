@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 from routes.user.route_user import main as route_user
 from routes.blog.route_blog import main as route_blog
 from routes.todo.route_todo import todo_main
+from routes.admin.route_admin import main as route_admin
 from extensions import csrf, moment, migrate, login_manager, bootstrap
 from models import db, User
 
@@ -22,6 +23,7 @@ def create_app():
     app.register_blueprint(route_blog)
     app.register_blueprint(route_user)
     app.register_blueprint(todo_main)
+    app.register_blueprint(route_admin)
     extension(app)
     migrate = Migrate(app, db)
     return app
@@ -46,7 +48,7 @@ app = create_app()
 
 
 if __name__=='__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=3000)
 
 
 

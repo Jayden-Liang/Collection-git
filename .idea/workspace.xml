@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69a923a7-ef58-427d-9e5d-e9a1cea08ec0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Collection/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/Collection/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Collection/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Collection/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Collection/extensions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Collection/extensions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Collection/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Collection/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Collection/routes/blog/route_blog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Collection/routes/blog/route_blog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Collection/routes/blog/templates/detail.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Collection/routes/blog/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Collection/routes/blog/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Collection/routes/blog/templates/new-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/Collection/routes/blog/templates/new-post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Collection/routes/blog/templates/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/Collection/routes/blog/templates/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Collection/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Collection/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Collection/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Collection/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,12 +21,14 @@
     <session id="1709893978">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.5" value="3" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.6" value="4" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -37,7 +37,7 @@
           <entry key="coverage" value="1" />
           <entry key="css" value="2" />
           <entry key="env" value="2" />
-          <entry key="html" value="19" />
+          <entry key="html" value="23" />
           <entry key="py" value="66" />
           <entry key="txt" value="1" />
           <entry key="yml" value="1" />
@@ -47,7 +47,7 @@
         <counts>
           <entry key="CSS" value="2" />
           <entry key="Dockerfile" value="1" />
-          <entry key="HTML" value="19" />
+          <entry key="HTML" value="23" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Python" value="66" />
           <entry key="YAML" value="1" />
@@ -57,16 +57,16 @@
         <counts>
           <entry key="css" value="13" />
           <entry key="gitignore" value="8" />
-          <entry key="html" value="438" />
-          <entry key="py" value="3628" />
+          <entry key="html" value="628" />
+          <entry key="py" value="4233" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="13" />
-          <entry key="HTML" value="438" />
+          <entry key="HTML" value="628" />
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="3628" />
+          <entry key="Python" value="4233" />
         </counts>
       </usages-collector>
     </session>
@@ -76,50 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Collection/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-76">
-              <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Collection/wsgi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding>
-                <element signature="e#24#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../saas app/10-using-our-first-flask-extension/setup.py">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
-              <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Collection/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Collection/routes/blog/route_blog.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="48" column="16" lean-forward="true" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+              <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -128,10 +86,76 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Collection/routes/admin/route_admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Collection/routes/admin/templates/admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Collection/routes/blog/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="779">
+              <caret line="41" column="34" lean-forward="true" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Collection/routes/blog/route_blog.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1368">
+              <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-end-line="28" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Collection/wsgi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding>
+                <element signature="e#24#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Collection/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="496">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Collection/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+            <state relative-caret-position="121">
+              <caret line="44" column="86" selection-start-line="44" selection-start-column="86" selection-end-line="44" selection-end-column="86" />
               <folding>
                 <element signature="n#style#0;n#HR#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -145,6 +169,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -168,21 +193,23 @@
         <option value="$PROJECT_DIR$/Collection/routes/blog/templates/detail.html" />
         <option value="$PROJECT_DIR$/Collection/extensions.py" />
         <option value="$PROJECT_DIR$/Collection/setup.py" />
-        <option value="$PROJECT_DIR$/Collection/models.py" />
-        <option value="$PROJECT_DIR$/Collection/routes/blog/templates/index.html" />
         <option value="$PROJECT_DIR$/../测试/测试with open/test.py" />
-        <option value="$PROJECT_DIR$/Collection/routes/blog/route_blog.py" />
         <option value="$PROJECT_DIR$/Collection/wsgi.py" />
+        <option value="$PROJECT_DIR$/Collection/models.py" />
+        <option value="$PROJECT_DIR$/Collection/routes/blog/route_blog.py" />
+        <option value="$PROJECT_DIR$/Collection/routes/blog/templates/index.html" />
         <option value="$PROJECT_DIR$/Collection/app.py" />
         <option value="$PROJECT_DIR$/Collection/templates/base.html" />
+        <option value="$PROJECT_DIR$/Collection/routes/admin/templates/admin.html" />
+        <option value="$PROJECT_DIR$/Collection/routes/admin/route_admin.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="147" />
-    <option name="y" value="77" />
-    <option name="width" value="1828" />
-    <option name="height" value="1103" />
+    <option name="x" value="-75" />
+    <option name="y" value="22" />
+    <option name="width" value="1830" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -205,6 +232,32 @@
               <item name="Collection-git" type="462c0819:PsiDirectoryNode" />
               <item name="Collection" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Collection-git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Collection-git" type="462c0819:PsiDirectoryNode" />
+              <item name="Collection" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Collection-git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Collection-git" type="462c0819:PsiDirectoryNode" />
+              <item name="Collection" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Collection-git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Collection-git" type="462c0819:PsiDirectoryNode" />
+              <item name="Collection" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Collection-git" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Collection-git" type="462c0819:PsiDirectoryNode" />
+              <item name="Collection" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -212,6 +265,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -235,7 +289,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.wsgi">
+  <component name="RunManager" selected="Python.app">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Collection-git" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -372,15 +426,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="118" y="62" width="1462" height="882" extended-state="1" />
-    <editor active="true" />
+    <frame x="-60" y="18" width="1464" height="832" extended-state="1" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5165094" visible="true" weight="0.2973352" />
-      <window_info id="Structure" order="1" sideWeight="0.48349056" side_tool="true" visible="true" weight="0.2973352" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.672956" visible="true" weight="0.29691878" />
+      <window_info id="Structure" order="1" sideWeight="0.32704404" side_tool="true" visible="true" weight="0.29691878" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43466666" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.54571426" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -399,21 +452,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../新建文件夹/bluelog/wsgi.py" />
-    <entry file="file://E:/BaiduNetdiskDownload/下半部/web13/web13-flask和服务器部署/web13上课用品/web13上课用品豪华版/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../测试/测试package,/mytest/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -531,13 +569,7 @@
     <entry file="file://$PROJECT_DIR$/../saas app/11-creating-a-contact-form/.env">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Collection/routes/blog/templates/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Collection/routes/blog/templates/detail.html" />
     <entry file="file://$PROJECT_DIR$/../测试/测试base.html/templates/detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
@@ -552,33 +584,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Collection/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="6" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Collection/setup.py" />
     <entry file="file://$PROJECT_DIR$/Collection/migrations/versions/409ccb7f0ad1_add_ut.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Collection/migrations/versions/c23f23c0f660_extract_topic_from_blog.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
-          <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
-          <folding>
-            <element signature="e#121#143#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Collection/routes/blog/templates/detail-droped.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-465">
-          <caret line="39" column="14" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="40" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Collection/migrations/versions/c23f23c0f660_extract_topic_from_blog.py" />
+    <entry file="file://$PROJECT_DIR$/Collection/routes/blog/templates/detail-droped.html" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/jinja2/parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -594,13 +605,7 @@
       </provider>
     </entry>
     <entry file="file://E:/BaiduNetdiskDownload/上半部/web4/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../saas app/11-creating-a-contact-form/snakeeyes/templates/macros/form.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -616,11 +621,7 @@
     </entry>
     <entry file="file://E:/BaiduNetdiskDownload/上半部/web4/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1197">
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-1197" />
       </provider>
     </entry>
     <entry file="file://E:/BaiduNetdiskDownload/上半部/web2/server.py">
@@ -632,11 +633,7 @@
     </entry>
     <entry file="file://E:/BaiduNetdiskDownload/上半部/web2/client_ssl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-969">
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-969" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../测试/测试with open/test.py">
@@ -653,73 +650,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Collection/routes/blog/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="50" column="52" selection-start-line="50" selection-start-column="52" selection-end-line="50" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Collection/extensions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Collection/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../saas app/10-using-our-first-flask-extension/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
-          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/BaiduNetdiskDownload/Django-2.1_Python.part09.rar/Django-2.1_Python/Udemy - Django 2.1 &amp; Python  The Ultimate Web Development Bootcamp/3. Site #1 - Word Counter/2. Django Cheat Sheet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="40" selection-start-column="40" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Collection/routes/blog/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="41" column="34" lean-forward="true" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Collection/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="247">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="e#24#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Collection/app.py">
+    <entry file="file://$PROJECT_DIR$/Collection/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-76">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        <state relative-caret-position="121">
+          <caret line="44" column="86" selection-start-line="44" selection-start-column="86" selection-end-line="44" selection-end-column="86" />
+          <folding>
+            <element signature="n#style#0;n#HR#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Collection/routes/blog/route_blog.py">
+    <entry file="file://$PROJECT_DIR$/Collection/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="48" column="16" lean-forward="true" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+        <state relative-caret-position="247">
+          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Collection/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/Collection/routes/blog/route_blog.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+        <state relative-caret-position="-1368">
+          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-end-line="28" selection-end-column="34" />
           <folding>
-            <element signature="n#style#0;n#HR#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Collection/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Collection/routes/admin/templates/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Collection/routes/admin/route_admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

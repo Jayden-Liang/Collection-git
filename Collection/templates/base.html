@@ -36,10 +36,13 @@
         <a class="nav-link text-white" href="/">首页 <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="/new">发布</a>
+        <a class="nav-link text-white" href="{{ url_for('blog.new_article') }}">发布</a>
       </li>
         <li class="nav-item">
         <a class="nav-link text-white" href="/todo">Todo</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link text-white" href="{{ url_for('control.index') }}">Admin</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

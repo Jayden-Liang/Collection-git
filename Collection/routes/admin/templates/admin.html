@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Admin page{% endblock %}
+
+{% block body %}
+<form method="POST" action="{{ url_for('control.addTopic') }}">
+    {{ form.csrf_token }}
+    {{ form.name.label }} {{ form.name(size=20) }}
+    {{ form.submit() }}
+    <!--<input type="submit" value="Go">-->
+</form>
+
+<form method="POST" action="{{ url_for('control.removeTopic') }}">
+    {{ removeForm .csrf_token }}
+    {{ removeForm .name.label }} {{ removeForm.name(size=20) }}
+    {{ removeForm .submit() }}
+    <!--<input type="submit" value="Go">-->
+</form>
+{% endblock %}

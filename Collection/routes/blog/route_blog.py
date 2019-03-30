@@ -51,10 +51,10 @@ def index():
     topics = Topic.query.all()
     # if current_user.is_authenticated:
     #     username = current_user.username
-    word_list = get_random_phrase()
+    # word_list = get_random_phrase()
     random_today = get_random_study()
 
-    return render_template('index.html', blog = random_today, topics =topics, word_list = word_list)
+    return render_template('index.html', blog = random_today, topics =topics,)
 
 
 @main.route('/new', methods=['POST', 'GET'])
