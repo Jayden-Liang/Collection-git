@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="no">
+
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.8.0/css/all.css">-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">-->
+  
+  <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/fa-css/all.css') }}">
+  <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base.css') }}">
+   {% block head %}{% endblock %}
+</head>
+<body>
+<!-- Section banner -->
+<div class="all">
+<div class='nav-sec'>
+<nav class=" container navbar navbar-expand-lg navbar-light bg-transparent">
+  <a class="navbar-brand text-white" href="/">Collection</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="/">首页 <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="/new">发布</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link text-white" href="/todo">Todo</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          分类
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {% for topic in topics %}
+               <a class="dropdown-item" href="/topic?sort_by={{ topic.body }}&page=1">{{ topic.body }}</a>
+            {% endfor %}
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-1 my-lg-0">
+      <input type="text" class="css-input form-control mr-sm-2" placeholder="Search">
+      <div class="search-button" type=''>
+       <i class="fas fa-search"></i>
+       </div>
+    </form>
+  </div>
+</nav>
+</div>
+<!-- Section main -->
+
+<!--       should insert flash here  --> 
+
+      {% block body %}{% endblock %}
+</div>
+ <!--Section footer-->
+
+<footer class="footer text-center">
+    {% block pagination %}{% endblock %}
+    <HR class='border-line' style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15)" width="100%" color=#f1f1f1 SIZE=1>
+      <div class="container">
+        <ul class="list-inline">
+          <li class="text-muted">Collection &copy; 2019</li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+ </footer>
+
+<!--<script type='' src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
+<!--<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>-->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
