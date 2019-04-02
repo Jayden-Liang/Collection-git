@@ -12,14 +12,16 @@ from models import db, User
 
 
 
+
+
 def create_app():
-    app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL') or \
-                                            'sqlite:///' + os.path.join(os.path.abspath(os.path.dirname(__file__)),
-                                                                        'app.db')
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config.from_pyfile('settings.py', silent=True)
-    app.secret_key = b'fdhakhfkjaghj873o8qyhhg'
+    app = Flask(__name__, instance_relative_config=True)
+    # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL') or \
+    #                                         'sqlite:///' + os.path.join(os.path.abspath(os.path.dirname(__file__)),
+    #                                                                     'app.db')
+    # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config.from_object('config.settings')
+    # app.secret_key = b'fdhakhfkjaghj873o8qyhhg'
     register_blueprint(app)
     extension(app)
     migrate = Migrate(app, db)
