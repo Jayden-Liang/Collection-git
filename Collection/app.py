@@ -4,6 +4,7 @@ from flask_migrate import Migrate
 
 from routes.user.route_user import main as route_user
 from routes.blog.route_blog import main as route_blog
+from routes.contact.route_contact import main as route_contact
 from routes.todo.route_todo import todo_main
 from routes.admin.route_admin import main as route_admin
 from extensions import csrf, moment, migrate, login_manager, bootstrap
@@ -19,14 +20,19 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config.from_pyfile('settings.py', silent=True)
     app.secret_key = b'fdhakhfkjaghj873o8qyhhg'
+    register_blueprint(app)
+    extension(app)
+    migrate = Migrate(app, db)
+    return app
 
+
+def register_blueprint(app):
     app.register_blueprint(route_blog)
     app.register_blueprint(route_user)
     app.register_blueprint(todo_main)
     app.register_blueprint(route_admin)
-    extension(app)
-    migrate = Migrate(app, db)
-    return app
+    app.register_blueprint(route_contact)
+    return None
 
 
 def extension(app):

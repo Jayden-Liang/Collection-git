@@ -65,6 +65,10 @@
 </nav>
 </div>
 <!-- Section main -->
+    {% for message in get_flashed_messages() %}
+        <div class="flash-alert text-center mx-auto ">{{ message }}</div>
+    {% endfor %}
+
 
 <!--       should insert flash here  --> 
 
@@ -78,7 +82,7 @@
       <div class="container">
         <ul class="list-inline">
           <li class="text-muted">Collection &copy; 2019</li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="{{ url_for('contact.contact') }}">Contact</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms of Service</a></li>
         </ul>
