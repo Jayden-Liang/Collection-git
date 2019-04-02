@@ -44,7 +44,17 @@ body{
 .blog-title{
 	border-width: 5px solid red;
 }
+.flash-alert{
+    padding: 0.7rem;
+    background-color: #ff7373;
+    margin: 2rem;
+    vertical-align: center;
+    border-radius: 15px;
+    color: #003366;
+    width: 80%;
 
+
+}
 /*footer*/
 
 .border-line{

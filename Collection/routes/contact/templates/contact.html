@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% import 'form.html' as f with context %}
+
+{% block head %}
+<style>
+    .nav-sec{
+       height: 10vh;
+    }
+    body{
+       background-color: white;
+    }
+    .main-form{
+      margin-top: 3rem;
+    }
+    #content{
+      height: 30vh;
+    }
+
+</style>
+{% endblock %}
+
+
+
+{% block body %}
+
+<div class="row main-form">
+ <div class="col col-md-6 offset-md-3">
+{% call f.form_tag('contact.contact', css_class='my-form') %}
+   {% call f.form_group(form.name, css_class ='for-style' ) %}
+   {%  endcall %}
+   {% call f.form_group(form.email, css_class ='for-style' ) %}
+   {% endcall %}
+    {% call f.form_group(form.content, css_class ='for-style', placeholder ='Anything...' ) %}
+   {% endcall %}
+   <button type="submit" class="btn btn-primary">Send e-mail</button>
+{% endcall %}
+ </div>
+</div>
+{% endblock %}

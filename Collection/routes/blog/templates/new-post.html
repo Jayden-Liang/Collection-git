@@ -43,14 +43,17 @@
 
 		<select class="form-control" name='topic' style="width: 45%">
 		 {% for topic in topics %}
-			 <option value="{{ topic.body }}">{{ topic.body }}</option>
+			 <option id='{{ topic.body }}' value="{{ topic.body }}">{{ topic.body }}</option>
 			 {% endfor %}
 		</select>
 		</div>
     <button type="submit" class="btn btn-light bg-primary button-new">提交</button>
 </form>
 
-
+<script type="text/javascript">
+	all = document.querySelector('#All')
+	al.setAttribute('type', 'hidden')
+</script>
 <script src="{{ url_for('static',filename='editor.md-master/examples/js/jquery.min.js') }}"></script>
 <script src="{{ url_for('static',filename='editor.md-master/editormd.min.js') }}"></script>
 <script type="text/javascript">
